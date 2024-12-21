@@ -7,7 +7,7 @@ This repository contains the following data files:
 
 1. feature-table outputs from qiime2 (.tsv tables with columns as samples and rows as fungal or bacterial taxa, with values corresponding to sequence read counts)
 2. a .csv file with all sample metadata used in analyses
-3. a .csv file matching sample barcodes in the metadata file to sequencing library filenames
+3. two .csv files matching sample barcodes in the metadata file to sequencing library filenames in the feature-tables
 
 And the following code scripts: 
 1. A shell script for taking the raw fasta files through the QIIME2 pipeline using the command-line interface
