@@ -3,14 +3,11 @@ Repository for code and data used to analyze the soil microbial communities asso
 
 Raw 16S and ITS2 sequencing files for this project can be found on the NCBI Sequence Read Archives under accession numbers #### and ####. 
 
-This repository contains the following data folders and files: 
+This repository contains the following data files: 
 
-1. A folder with quality control outputs for the ITS2 sequencing data
-2. A folder with quality control outputs for the 16S sequencing data
-3. A folder with all ITS2 QIIME2 objects
-4. A folder with all 16S QIIME2 objects
-5. tsv table with all ITS2 sequences matched to fungal taxa using the UNITE database
-6. tsv table with all 16S sequences matched to bacterial taxa using the SILVA database
+1. feature-table outputs from qiime2 (.tsv tables with columns as samples and rows as fungal or bacterial taxa, with values corresponding to sequence read counts)
+2. a .csv file with all sample metadata used in analyses
+3. a .csv file matching sample barcodes in the metadata file to sequencing library filenames
 
 And the following code scripts: 
 1. A shell script for taking the raw fasta files through the QIIME2 pipeline using the command-line interface
