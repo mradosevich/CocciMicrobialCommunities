@@ -120,17 +120,18 @@ tbl.cast.family <- dcast(tbl.melt, sample ~ family, sum)
 tbl.cast.genus <- dcast(tbl.melt, sample ~ genus, sum)
 tbl.cast.species <- dcast(tbl.melt, sample ~ species, sum)
 
-tbl.combined.phylum <- CPNM_MCA2 %>% full_join(tbl.cast.phylum, by = c("Library_Name" = "sample")) %>% 
+# combine taxonomy tables with sample metadata, and remove PCR controls from dataset
+tbl.combined.phylum <- meta %>% full_join(tbl.cast.phylum, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
-tbl.combined.class <- CPNM_MCA2 %>% full_join(tbl.cast.class, by = c("Library_Name" = "sample")) %>% 
+tbl.combined.class <- meta %>% full_join(tbl.cast.class, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
-tbl.combined.order <- CPNM_MCA2 %>% full_join(tbl.cast.order, by = c("Library_Name" = "sample")) %>% 
+tbl.combined.order <- meta %>% full_join(tbl.cast.order, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
-tbl.combined.family <- CPNM_MCA2 %>% full_join(tbl.cast.family, by = c("Library_Name" = "sample")) %>% 
+tbl.combined.family <- meta %>% full_join(tbl.cast.family, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
-tbl.combined.genus <- CPNM_MCA2 %>% full_join(tbl.cast.genus, by = c("Library_Name" = "sample")) %>% 
+tbl.combined.genus <- meta %>% full_join(tbl.cast.genus, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
-tbl.combined.species <- CPNM_MCA2 %>% full_join(tbl.cast.species, by = c("Library_Name" = "sample")) %>% 
+tbl.combined.species <- meta %>% full_join(tbl.cast.species, by = c("Library_Name" = "sample")) %>% 
   filter(site != 'NA')
 
 # write to csv
