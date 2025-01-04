@@ -1,7 +1,7 @@
 # CocciMicrobialCommunities
 Repository for code and data used to analyze the soil microbial communities associated with Coccidioides immitis
 
-Raw 16S and ITS2 sequencing files for this project can be found on the NCBI Sequence Read Archives under accession numbers #### and ####. 
+Raw 16S and ITS2 sequencing files for this project can be found on the NCBI Sequence Read Archives under Accession Numbers PRJNA1201319 (16S) and PRJNA1201328 (ITS2). 
 
 This repository contains the following data files: 
 
@@ -10,7 +10,7 @@ This repository contains the following data files:
 3. two .csv files matching sample barcodes in the metadata file to sequencing library filenames in the feature-tables
 
 And the following code scripts: 
-1. A shell script for taking the raw fasta files through the QIIME2 pipeline using the command-line interface
+1. Shell scripts for taking the raw fasta files through the QIIME2 pipeline using the command-line interface
 2. An R script for preprocessing feature-table.tsv files to create taxonomy tables
 3. An R script for analyzing alpha diversity within each sample
 4. An R script for analyzing beta diversity across the sample set
