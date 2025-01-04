@@ -3,11 +3,6 @@
 library(tidyverse)
 library(reshape2)
 
-
-library(readr)
-library(tibble)
-library(data.table)
-
 # import metadata
 # read in csv
 meta <- read.csv("samplemetadata.csv")

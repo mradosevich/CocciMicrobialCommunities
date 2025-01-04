@@ -2,16 +2,10 @@
 # load libraries
 
 library(vegan)
-library(ape)
-library(lsmeans)
-library(psych)
-library(data.table)
-library(glue)
 library(tidyverse)
-library(insight)
 
 # load data
-d = read.csv("ITS2.species.csv")
+d = read.csv("ITS2/ITS2.species.csv")
 # remove unidentified and unspecified taxa
 d = d[,-grep("unspecified", colnames(d))]
 d = d[,-grep("unidentified", colnames(d))]

@@ -2,9 +2,8 @@
 # load libraries
 
 library(phyloseq)
-library(ggplot2)
 library(tidyverse)
-library(vegan)
+
 
 # FOR ITS2
 # load data and metadata
@@ -13,7 +12,7 @@ d <- d %>% filter(rowSums(d[,8:dim(d)[2]])>0)
 d <- d %>% filter(!stringr::str_detect(species,'unspecified'))
 d <- d %>% filter(!stringr::str_detect(species,'unidentified'))
 
-d.meta = read.csv("CPNM_MCA2.csv") %>% select(1:50)
+d.meta = read.csv("samplemetadata.csv") %>% select(1:50)
 rownames(d.meta) = d.meta[,13]
 
 d.meta$treatment=as.factor(d.meta$treatment)
