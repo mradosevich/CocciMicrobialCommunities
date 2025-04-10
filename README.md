@@ -14,7 +14,6 @@ This repository contains the following data files:
 And the following code scripts: 
 1. Shell scripts for taking the raw fasta files through the QIIME2 pipeline using the command-line interface
 2. An R script for preprocessing feature-table.tsv files to create taxonomy tables
-3. An R script for generating alpha diversity metrics within each sample 
-4. An R script for generating beta diversity metrics across the sample set
-5. An R script for analyzing fungal co-occurrence patterns with Coccidioides immitis
-6.  An R script for analyzing bacterial co-occurrence patterns with Coccidioides immitis
+3. An R script for generating alpha diversity metrics
+4. An R script for generating beta diversity metrics
+5. R scripts for analyzing fungal and bacterial co-occurrence patterns with Coccidioides immitis
