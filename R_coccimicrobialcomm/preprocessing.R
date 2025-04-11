@@ -77,7 +77,7 @@ function.species<- function(x) substr(x, unlist(gregexpr(";", x))[6] + 1,
 tbl.melt$species <- unlist(lapply(tbl.melt$variable, function.species))
 # replace __ wih Unknown 
 tbl.melt[tbl.melt == "__"] <- "Unknown"
-# append "unspecified" with next highest identified taxa level
+# append "unspecified" with next highest identified taxa level (for ITS2 only)
 unspecified.phylum <- function (x) paste("unspecified_", substr(x, 1,
                                                                unlist(gregexpr(";", x))[1]-1), sep = "")
 tbl.melt[tbl.melt$phylum=="unspecified",][,5:10] <-
@@ -193,12 +193,12 @@ function.species= function(x) substr(x, unlist(gregexpr(";", x))[6] + 1,
                                      nchar(x))
 tbl.full$species = unlist(lapply(tbl.full$taxa, function.species))
 # replace __ wih Unknown
-tbl.full[tbl.full == "__"] = "unspecified"
+tbl.full[tbl.full == "__"] = "Unknown"
 
 #exported csv here
 tbl.full = tbl.full %>% relocate(taxa, kingdom, phylum, class, order, family, genus, species) 
 
-# append "unspecified" with next highest identified taxa level
+# append "unspecified" with next highest identified taxa level (for ITS2 only)
 unspecified.phylum = function (x) paste("unspecified_", substr(x, 1,
                                                                unlist(gregexpr(";", x))[1]-1), sep = "")
 tbl.full[tbl.full$phylum=="unspecified",][,3:8] =

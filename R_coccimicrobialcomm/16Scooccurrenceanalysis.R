@@ -3,10 +3,13 @@ library(tidyverse)
 library(ecospat)
 
 d <- read.csv("16S/16S.family.csv", sep = ',', check.names=FALSE)
-d.meta = d %>% select(1:50)
+d = d[,-grep("Unknown", colnames(d))]
+d = d[,-grep("uncultured", colnames(d))]
+d = d[,colSums(d[,39:dim(d)[2]]) > 0]
 
-d <- d[,52:dim(d)[2]]
-d = d[,-grep("unspecified", colnames(d))]
+d.meta = d %>% select(1:38)
+d <- d[,39:dim(d)[2]]
+
 rownames <- d.meta[,13]
 d$samples <- rownames
 
